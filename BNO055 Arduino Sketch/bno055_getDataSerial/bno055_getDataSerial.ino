@@ -8,8 +8,8 @@
 
    Conexiones
    ===========
-   SCL a analog 5
-   SDA a analog 4
+   SCL a analog 5, D1
+   SDA a analog 4, D2
    VDD a 3.3V DC
    GROUND a common ground
 */

@@ -6,13 +6,16 @@ using System.Threading;
 
 public class SerialCommManager : Singleton<SerialCommManager>
 {
-	SerialPort stream = new SerialPort("/dev/cu.usbmodem1411", 9600);
+    public string port = "COM3";
+    //public string serialPort = "/dev/cu.usbmodem1411";
+    SerialPort stream;
 	string returnData;
 	Thread thread;
 
 	void Start () 
 	{
-		thread = new Thread(new ThreadStart(ReceiveThread));
+        stream = new SerialPort(port, 9600);
+        thread = new Thread(new ThreadStart(ReceiveThread));
 		thread.Start();	
 	}
 
